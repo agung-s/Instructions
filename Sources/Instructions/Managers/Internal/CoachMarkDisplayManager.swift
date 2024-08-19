@@ -245,7 +245,7 @@ class CoachMarkDisplayManager {
         // stand above or below it. Alternatively, it can also be displayed
         // over the cutoutPath.
         if coachMark.isDisplayedOverCutoutPath {
-            let constant = cutoutPath.bounds.midY - parentView.frame.size.height / 2
+            var constant = cutoutPath.bounds.midY - parentView.frame.size.height / 2
 
             if constant.isNaN || constant.isInfinite {
                 constant = 0
