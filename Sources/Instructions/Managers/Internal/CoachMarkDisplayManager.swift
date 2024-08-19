@@ -247,6 +247,10 @@ class CoachMarkDisplayManager {
         if coachMark.isDisplayedOverCutoutPath {
             let constant = cutoutPath.bounds.midY - parentView.frame.size.height / 2
 
+            if constant.isNaN || constant.isInfinite {
+                constant = 0
+            }
+
             coachMarkView.centerYAnchor.constraint(equalTo: parentView.centerYAnchor,
                                                    constant: constant).isActive = true
         } else if coachMark.arrowOrientation! == .bottom {
